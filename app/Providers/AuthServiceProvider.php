@@ -25,6 +25,14 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        //プレミア会員の権限Gate
+        Gate::define('premier-only',function($user){
+
+            return($user->flag == 1);
+
+        });
+
+
+
     }
 }

@@ -25,4 +25,21 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    // 一般会員向けのトップページ表示
+    public function free_index()
+    {
+        return view('free');
+    }
+
+    // プレミア会員向けのトップページ表示
+    public function premier_index()
+    {
+        return view('premier');
+    }
+
+
+
+
+
 }

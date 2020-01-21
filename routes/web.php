@@ -19,6 +19,16 @@ Auth::routes();
 Route::group(['middleware' => 'auth:user'],function(){
 
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/free', 'HomeController@free_index')->name('free');
+
+    Route::group(['middleware' => ['auth','can:premier-only']],function(){
+
+        Route::get('/premier', 'HomeController@premier_index')->name('premier');
+
+    });
+
+    
+
 
 });
 
